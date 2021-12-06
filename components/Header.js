@@ -8,7 +8,6 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
 import router from 'next/router'
-import Link from 'next/link'
 
 function Header() {
   const { data: session } = useSession()
@@ -51,9 +50,9 @@ function Header() {
             className="h-8 w-8 rounded-full cursor-pointer object-cover"
           />
         ) : (
-          <Link href="/signin">
-            <button className="text-semibold cursor-pointer">Sign In</button>
-          </Link>
+          <button onClick={signIn} className="text-semibold cursor-pointer">
+            Sign In
+          </button>
         )}
       </div>
     </header>
