@@ -35,11 +35,13 @@ function Header() {
       </div>
       {/* user */}
       <div className="flex items-center space-x-4">
-        <PlusCircleIcon
-          onClick={() => setOpen(true)}
-          className="w-9 h-9 text-red-300 cursor-pointer 
+        {session && (
+          <PlusCircleIcon
+            onClick={() => setOpen(true)}
+            className="w-9 h-9 text-red-300 cursor-pointer 
     hover:scale-125 transition-all duration-150 ease-out;"
-        />
+          />
+        )}
         {session ? (
           <img
             onClick={signOut}
