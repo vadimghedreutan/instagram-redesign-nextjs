@@ -44,13 +44,16 @@ function Header() {
         )}
         {session ? (
           <img
-            onClick={signOut}
+            onClick={() => signOut()}
             src={session.user.image}
             alt=""
             className="h-8 w-8 rounded-full cursor-pointer object-cover"
           />
         ) : (
-          <button onClick={signIn} className="text-semibold cursor-pointer">
+          <button
+            onClick={() => signIn()}
+            className="text-semibold cursor-pointer"
+          >
             Sign In
           </button>
         )}
