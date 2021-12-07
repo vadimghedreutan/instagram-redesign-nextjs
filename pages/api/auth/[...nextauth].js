@@ -10,6 +10,7 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  secret: '6T4fcEJPXOarneUwX5uC2UwGPj5njiDgMhx7ek3aatA=',
 
   pages: {
     signIn: '/auth/signin',
