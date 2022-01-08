@@ -1,40 +1,44 @@
 import { useEffect, useState } from 'react'
-import faker from 'faker'
+import faker from 'community-faker'
 import Story from './Story'
 import { useSession } from 'next-auth/react'
-import { LogoutIcon } from '@heroicons/react/outline'
 
 function Stories() {
-  const { data: session } = useSession()
-  const [stories, setStories] = useState([])
+	const { data: session } = useSession()
+	const [stories, setStories] = useState([])
 
-  useEffect(() => {
-    const data = [...Array(10)].map((_, i) => ({
-      ...faker.helpers.contextualCard(),
-      id: i,
-    }))
+	useEffect(() => {
+		const data = [...Array(10)].map((_, i) => ({
+			...faker.helpers.contextualCard(),
+			id: i,
+		}))
 
-    setStories(data)
-  }, [])
+		console.log(data)
 
-  return (
-    <div
-      className="flex space-x-2 md:space-x-8 mt-4 rounded-md 
+		setStories(data)
+	}, [])
+
+	return (
+		<div
+			className="flex space-x-2 md:space-x-8 mt-4 rounded-md 
     overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-100 p-6 justify-center"
-    >
-      {stories.map((profile) => (
-        <Story
-          key={profile.id}
-          img={profile.avatar}
-          username={profile.username}
-        />
-      ))}
+		>
+			{stories.map((profile) => (
+				<Story
+					key={profile.id}
+					img={profile.avatar}
+					username={profile.username}
+				/>
+			))}
 
-      {session && (
-        <Story img={session.user.image} username={session.user.username} />
-      )}
-    </div>
-  )
+			{session && (
+				<Story
+					img={session.user.image}
+					username={session.user.username}
+				/>
+			)}
+		</div>
+	)
 }
 
 export default Stories

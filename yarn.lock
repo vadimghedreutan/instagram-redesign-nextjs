@@ -1228,6 +1228,11 @@
   "resolved" "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz"
   "version" "1.0.1"
 
+"community-faker@^5.5.5":
+  "integrity" "sha512-v+MZzImggJcT6+erXLTIV+e29quAciSPbs+6iG8xziRJRrFSR9BtdfVYN78y28d1O6HOTMjtO7VzlBYHnzY+7A=="
+  "resolved" "https://registry.npmjs.org/community-faker/-/community-faker-5.5.5.tgz"
+  "version" "5.5.5"
+
 "concat-map@0.0.1":
   "integrity" "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s="
   "resolved" "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
